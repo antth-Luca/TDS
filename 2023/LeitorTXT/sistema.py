@@ -11,7 +11,7 @@ if not arquivoExiste(arq):
 
                 #Menu
 while True:
-    resp = menu(['Ler texto', 'Adicionar texto', 'Sair'])
+    resp = menu(['Ler texto', 'Adicionar texto', 'Chamar incessantemente', 'Sair'])
     if resp == 1:
         #Opção para ler texto
         ler(arq)
@@ -21,6 +21,9 @@ while True:
         texto = str(input('-> '))
         escrever(arq, texto)
     elif resp == 3:
+        nome = str(input('Qual nome devo chamar?\n-> ')).strip().capitalize()
+        chamar(nome)
+    elif resp == 4:
         #Opção para encerrar
         cabeçalho('Encerrando... Programa finalizado!')
         voz.say('Obrigado por usarem um programa de Luca Anthony. Boa noite')

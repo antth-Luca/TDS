@@ -38,6 +38,14 @@ def ler(nome):
         a.close()
 
 
+def chamar(nome):
+    txt = 1000 * (nome + ', ')
+    cont = True
+    cabeçalho('Sendo insistente...')
+    voz.say(txt)
+    voz.runAndWait()
+
+
 def escrever(nomeArq, txt):
     try:
         a = open(nomeArq, 'at')
