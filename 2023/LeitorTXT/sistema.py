@@ -21,6 +21,7 @@ while True:
         texto = str(input('-> '))
         escrever(arq, texto)
     elif resp == 3:
+        #Opção para falar algo por mil vezes. Inspirada na ceda do prof.Emerson tentando chamar o prof.Narciso
         nome = str(input('Qual nome devo chamar?\n-> ')).strip().capitalize()
         chamar(nome)
     elif resp == 4:
