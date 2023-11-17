@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receitas deliciosas</title>
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="shortcut icon" href="favicon-32x32.png" type="image/x-icon">
+    <style>
+        :root {
+            --corFundoSite: #E0F2E9;
+            --corFundoCartão: #E8CCBC;
+            --corFonte: #6E5448;
+            --corInterface: #5B7B7A;
+            --corFonteInterface: #3C887E;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            background-color: var(--corFundoSite);
+            text-align: justify;
+        }
+
+        header {
+            display: flex;
+            background-color: var(--corInterface);
+            border-radius: 0 0 16px 16px;
+            height: 8vh;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.412);
+        }
+
+        #logo {
+            width: 32px;
+            height: auto;
+            padding: 8px;
+        }
+
+        #nomeSite {
+            color: white;
+            padding-left: 8px;
+            text-decoration: underline;
+            text-shadow: 0px 0px 24px white;
+        }
+
+        /*Cartão*/
+        .card {
+            width: 625px;
+            height: 558px;
+            perspective: 1000px;
+            margin: 0 auto; /* Adicionado para centralizar o cartão horizontalmente */
+        }
+
+        .card-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.999s;
+        }
+
+        .card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front,
+        .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+        }
+
+        .card-front {
+            background-color: var(--corFundoCartão);
+            color: var(--corFonte);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 10px solid var(--corFundoCartão);
+            border-radius: 10px;
+            justify-content: center;
+            font-size: 24px;
+            transform: rotateY(0deg);
+        }
+
+        .card-back {
+            background-color: var(--corFundoCartão);
+            color: var(--corFonte);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 10px solid var(--corFundoCartão);
+            border-radius: 10px;
+            justify-content: center;
+            font-size: 24px;
+            transform: rotateY(180deg);
+        }
+
+        h5 {
+            margin-bottom: 0;
+        }
+
+        .aviso {
+            font-size: 16px;
+            text-decoration: underline;
+        }
+
+        ol {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img id="logo" src="https://img.freepik.com/icones-gratis/talheres_318-746810.jpg" alt="Logo do restaurante">
+
+        <h1 id="nomeSite">
+            Receitas deliciosas
+        </h1>
+    </header>
+
+    <main>
+        <div class="card">
+            <div class="card-inner">
+              <div class="card-front">
+                <h1>-Torta Paulista-</h1>
+                <h5>Ingredientes:</h5>
+                <ul>
+                    <li>3 pacotes de bolacha maizena</li>
+                    <li>500 g de amendoim sem sal moído grosseiramente</li>
+                    <li>250 g de margarina</li>
+                    <li>1/2 lata ou caixinha de leite condensado</li>
+                    <li>2 caixinhas pequenas de creme de leite</li>
+                </ul>
+                <p class="aviso">
+                    Modo de preparo no verso do cartão
+                </p>
+              </div>
+              <div class="card-back">
+                <h4>Modo de preparo:</h4>
+                <ol>
+                    <li>Bata a margarina na batedeira até obter um creme fofo.</li>
+                    <li>Acrescente o leite condensado aos poucos, continuando a bater, até formar um creme homogêneo.</li>
+                    <li>Adicione o creme de leite vagarosamente e misture tudo na batedeira.</li>
+                    <li>Acrescente o amendoim à mistura e mexa até formar um creme.</li>
+                    Pare de bater e prepare-se para montar o pavê.
+                    <li>Em um recipiente adequado, comece a montar camadas alternadas: uma camada de creme, uma camada de bolacha, outra camada de creme e assim por diante. Continue até que a última camada seja de creme.</li>
+                    <li>Salpique amendoim por cima da última camada de creme.</li>
+                    <li>Leve o pavê para a geladeira e deixe refrigerar por 12 horas.</li>
+                </ol>
+                <p class="aviso">Após as <strong>12 horas</strong> na geladeira, seu pavê estará pronto para ser saboreado. Aproveite!</p>
+              </div>
+            </div>
+        </div>          
+    </main>
+</body>
+</html>

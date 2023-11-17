@@ -1,0 +1,111 @@
+#Criação do banco de dados
+create database db_antthluca
+default character set utf8
+default collate utf8_general_ci;
+
+#Table 1 - Empregado
+create table empregado (
+id_empregado int auto_increment,
+nss int,
+nome varchar(255),
+sexo enum('M', 'F'),
+salario decimal(8, 2),
+primary key (id_empregado, nss)
+) default charset = utf8;
+
+#Table 2 - Departamento
+create table departamento (
+id_depto int auto_increment,
+nome varchar(255) not null,
+localizacao varchar(255),
+primary key (id_depto)
+) default charset = utf8;
+
+#Regist 1 - Em Departamento
+insert into departamento (nome, localizacao) values ('RH', 'Astorga - PR');
+
+#Table 3 - Projeto
+create table projeto (
+cod_proj int auto_increment,
+numero int default 0,
+nome varchar(40),
+localizacao varchar(40),
+primary key (cod_proj)
+) default charset=utf8;
+
+#Table relation 1 - [Empregado] -Trabalha para-> [Departamento]
+create table trabalha_depto (
+id_trabalha int auto_increment,
+id_empregado int,
+id_depto int,
+primary key (id_trabalha),
+foreign key (id_empregado) references empregado(id_empregado),
+foreign key (id_depto) references departamento(id_depto)
+) default charset=utf8;
+
+#Table relation 2 - [Empregado] -Gerencia-> [Departamento]
+create table gerencia (
+id_gerencia int auto_increment,
+id_empregado int,
+id_depto int,
+data_inicio date,
+data_fim date default null,
+primary key (id_gerencia),
+foreign key (id_empregado) references empregado(id_empregado),
+foreign key (id_depto) references departamento(id_depto)
+) default charset=utf8;
+
+#Table relation 3 - [Departamento] -Controla-> [Projeto]
+create table controla (
+id_controla int auto_increment,
+id_depto int,
+cod_proj int,
+primary key (id_controla),
+foreign key (id_depto) references departamento(id_depto),
+foreign key (cod_proj) references projeto(cod_proj)
+) default charset=utf8;
+
+#Table relation 4 - [Empregado] -Trabaha em-> [Departamento]
+create table trabalha_projeto (
+id_trabalha int auto_increment,
+id_empregado int,
+id_depto int,
+horas float, 
+primary key (id_trabalha),
+foreign key (id_empregado) references empregado(id_empregado),
+foreign key (id_depto) references departamento(id_depto)
+) default charset=utf8;
+
+#Table relation 5 - [Empregado] -Supervisiona-> [Empregado]
+create table supervisona (
+id_supersiona int primary key auto_increment,
+id_supervisor int ,
+id_supervisionado int,
+foreign key (id_supervisor) references empregado (id_empregado),
+foreign key (id_supervisionado) references empregado (id_empregado)
+) default charset = utf8;
+
+#Regist 2 - Em Empregado
+insert into empregado values(0,65464,"emerson","m",1000);
+insert into empregado values(0,45423,"WesleyJ","m",7777);
+insert into empregado values(0,12345,"Felipe","m",5000);
+insert into empregado values(0,85296,"Luca","m",1234);
+insert into empregado values(0,41242,"Eduardo","m",20341);
+insert into empregado values(0,96574,"Marcelo","m",20000);
+insert into empregado values(0,32345,"Andre","m",350000);
+insert into empregado values(0,65455,"Denise","f",10000);
+insert into empregado values(0,44445,"Maikon","m",2000);
+insert into empregado values(0,11231,"Karyellen","f",6000);
+insert into empregado values(0,11312,"Aline","f",6000);
+insert into empregado values(0,12133,"Gustavo","m",6000);
+
+#Regist 3 - Em Departamento
+insert into departamento (nome, localizacao) values ('Financeiro', 'Astorga - PR');
+
+#Table relation 6 - [Empregado] -Trabalha depto-> [Departamento]
+insert into trabalha_depto values(0, 8, 2);
+insert into trabalha_depto values(0, 7, 1);
+
+#Consulta 1 - O nome do empregado e nome do departamento que ele trabalha
+select e.nome, d.nome from empregado e, departamento d, trabalha_depto t
+where e.id_empregado = t.id_empregado and t.id_depto = d.id_depto;
