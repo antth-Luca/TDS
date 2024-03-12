@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/antthLuca - TDS 3º sem/Banco de dados II/DB Browser - SQLite/Bibliotecas.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1429"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,6:mainalunos"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1">-- Inserir cinco novos registros na tabela 'assuntos'
+INSERT INTO assuntos (nome) VALUES
+    ('Aventura'),
+    ('Economia'),
+    ('Psicologia'),
+    ('Ciência'),
+    ('Arte');
+
+-- Inserir cinco novos registros na tabela 'livros'
+INSERT INTO livros (titulo, autor, assunto, dtlanc, copias) VALUES
+    ('O Senhor dos Anéis', 'J.R.R. Tolkien', 5, '2023-04-15', 8),
+    ('Economia Comportamental', 'Richard Thaler', 3, '2023-06-22', 15),
+    ('Mente Inconsciente', 'John Bargh', 4, '2023-09-10', 12),
+    ('Cosmos', 'Carl Sagan', 4, '2024-01-05', 10),
+    ('A Noite Estrelada', 'Vincent van Gogh', 5, '2024-03-20', 5);
+
+-- Inserir cinco novos registros na tabela 'alunos'
+INSERT INTO alunos (nome, email, fone) VALUES
+    ('Larissa Lima', 'larissa.lima@email.com', '(11) 87654-3210'),
+    ('Ricardo Rodrigues', 'ricardo.rodrigues@email.com', '(22) 76543-2109'),
+    ('Camila Costa', 'camila.costa@email.com', '(33) 65432-1098'),
+    ('Felipe Fernandes', 'felipe.fernandes@email.com', '(44) 54321-0987'),
+    ('Amanda Almeida', 'amanda.almeida@email.com', '(55) 43210-9876');
+
+-- Inserir cinco novos registros na tabela 'emprestimos'
+INSERT INTO emprestimos (aluno, livro, retirada, prevret, devolucao, multa) VALUES
+    (6, 9, '2024-01-10', '2024-01-25', '2024-01-20', 2.50),
+    (7, 7, '2024-02-05', '2024-02-20', NULL, NULL),
+    (8, 10, '2024-03-15', '2024-03-30', NULL, NULL),
+    (9, 8, '2024-02-28', '2024-03-15', NULL, NULL),
+    (10, 6, '2024-03-05', '2024-03-20', NULL, NULL);
+</sql><current_tab id="0"/></tab_sql></sqlb_project>
