@@ -4,10 +4,6 @@ package aula3;
  */
 public class Aula3 {
     public static void main(String[] args) {
-        Radio rl = new Radio("Philips", 0);
-        rl.aumentar_volume();
-        rl.getVolume();
-        rl.getEstacao();
-        rl.getMarca();
+        // TODO code application logic here
     }
 }
