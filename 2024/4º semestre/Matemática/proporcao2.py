@@ -43,15 +43,21 @@ for key in equac:
 if pos_x == 'a':
     chuveiro = [equac['b'] * equac['c'], equac['d'] * expressao['valor']['x'], equac['d'] * expressao['valor']['operação']]
 elif pos_x == 'b':
-    pass
+    chuveiro = [equac['a'] * equac['d'], equac['c'] * expressao['valor']['x'], equac['c'] * expressao['valor']['operação']]
 elif pos_x == 'c':
-    pass
+    chuveiro = [equac['a'] * equac['d'], equac['b'] * expressao['valor']['x'], equac['b'] * expressao['valor']['operação']]
 else:  # pos_x == 'd'
-    pass
+    chuveiro = [equac['b'] * equac['c'], equac['a'] * expressao['valor']['x'], equac['a'] * expressao['valor']['operação']]
 
 # Operando expressão
 if expressao['operador'] == '+':
     passo = chuveiro[0] - chuveiro[2]
+elif expressao['operador'] == '-':
+    passo = chuveiro[0] + chuveiro[2]
+elif expressao['operador'] == '*':
+    passo = chuveiro[0] // chuveiro[2]
+else:  # expressao['operador'] == '/'
+    passo = chuveiro[0] * chuveiro[2]
 
 # Cálculo do resultado e apresentação do mesmo
 print(passo // chuveiro[1])
