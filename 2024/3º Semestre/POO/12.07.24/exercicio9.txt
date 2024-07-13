@@ -1,0 +1,41 @@
+Exercício 9 - Faça um resumo para assunto Programação orientada a objeto, descreva o que é e apresente exemplos:
+	■ Classe;
+	■ Objeto;
+	■ Atributos;
+	■ Métodos;
+	■ Pilares da Orientação à Objetos.
+
+-- Resumo --
+A Programação Orientada à Objetos, mais conhecida pelo apelido "POO", é simples, mas as pessoas gostam de complicá-la de uma tal forma... Eu procuro sempre simplificar e gosto de explicar da seguinte maneira: é um paradigma, uma nova forma de pensar na hora de programar. Ele consiste em trazer objetos do nosso dia para dentro do código, criando um minimundo dentro do sistema. Como? Isto se tornará claro a seguir...
+
+-- Classe --
+As Classes são como formas. Elas servem para criarmos objetos à certos moldes.
+Imagine uma forma de alumínio para bolos, ela funciona como uma classe na POO.
+
+-- Objeto --
+É aquilo que é criado à partir de uma classe, ele respeita os atributos e métodos da sua 'forma', da sua classe.
+Agora imagine que pegamos a forma de alumínio e preparamos duas massas: uma de morango e outra de chocolate, ambas são objetos da POO. Cada uma com suas características (atributos), mas ambas foram feitas com a mesma forma (classe).
+
+-- Atributos --
+São as características de um objeto ou classe.
+Peguemos nossas massas (objetos), uma tem o atributo "sabor" como "morango" e a outra como "chocolate".
+
+-- Métodos --
+São as ações do objeto ou classe.
+Mais uma vez, olharemos para as massas de bolo. Ambas podem ser recheadas, cortadas, comidas e essas são ações que ela pode sofrer, mas as ações (métodos) não se restringem a isso, também podem ser realizados.
+
+-- Os três pilares e meio --
+Existem três pilares que sustentam o uso da POO, algumas poucas literaturas consideram quatro, mas isso será abordado com mais detalhes a seguir. São eles: herança, polimorfismo, encapsulamento e abstração.
+
+- Herança
+As classes podem herdar umas das outras e constituírem uma família: classe mãe, classe filha, classe avó e assim vai, essas são algumas nomenclaturas na herança de classes. Quando uma classe herda de outra, a classe filha recebe os atributos e métodos da classe mãe, que ainda podem ser modificados.
+
+- Polimorfismo
+Este pilar refere-se a habilidade dos objetos de uma mesma classe poderem executar o mesmo método e obter resultados diferentes. Por exemplo, duas massas de bolo podem executar "cortar" e uma sai com fatias retangulares e a outra com fatias triangulares.
+A palavra 'polimorfismo' significa "diversas formas de fazer a mesma coisa".
+
+- Encapsulamento
+O código é crucial para um sistema funcionar, disso já sabemos! Da mesma forma que um usuário não pode acessar o código, mas faz uso do mesmo através de interfaces, certos objetos podem não conseguir acessar certos métodos, ou certos métodos de um objetos podem não conseguir acessar certos atributos. Ou seja, estão encapsulados! Protegidos e guardados dentro de "cápsulas".
+
+- Abstração
+Este não é muito considerado um pilar da POO, pois já é comum na vida de todo programador. Refere-se a habilidade de refletir sobre um ambiente e extrair elementos cruciais dele e trazer para o minimundo do seu sistema, pois não é viável trazer o mundo real inteiro para dentro de um simples sistema.
