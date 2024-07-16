@@ -1,0 +1,24 @@
+[ -- Pré-requisito: Node.js -- ]
+
+> npm install -g @angular/cli
+
+> ng new meu_app --no-standalone
+
+> ng g c componentes/home
+
+> ng g c componentes/cidade_lista
+
+> ng g c componentes/cidade_form
+
+> npm install --save jquery
+
+> npm install --save bootstrap@4.3.1
+
+--> app > angular.json > [linha 37: substituir:
+    "styles": [
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+            ],
+]
+
+> 
