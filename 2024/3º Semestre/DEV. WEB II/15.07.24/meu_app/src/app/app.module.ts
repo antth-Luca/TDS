@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { CidadeListaComponent } from './componentes/cidade-lista/cidade-lista.component';
 import { CidadeFormComponent } from './componentes/cidade-form/cidade-form.component';
+import { ClienteListaComponent } from './componentes/cliente-lista/cliente-lista.component';
+import { ClienteFormComponent } from './componentes/cliente-form/cliente-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     CidadeListaComponent,
-    CidadeFormComponent
+    CidadeFormComponent,
+    ClienteListaComponent,
+    ClienteFormComponent
   ],
   imports: [
     BrowserModule,
