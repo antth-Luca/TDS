@@ -24,6 +24,11 @@
                         <td>{{ cidade.id }}</td>
                         <td>{{ cidade.nome }}</td>
                         <td>{{ cidade.uf }}</td>
+                        <td>
+                            <button type="button" routerLink="/cidade-form/{{ cidade.id }}" class="btn btn-primary">
+                                Alterar
+                            </button>
+                        </td>
                     </tr>
                 </tbody>
             </table>

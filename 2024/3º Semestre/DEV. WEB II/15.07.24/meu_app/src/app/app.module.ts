@@ -8,6 +8,7 @@ import { CidadeListaComponent } from './componentes/cidade-lista/cidade-lista.co
 import { CidadeFormComponent } from './componentes/cidade-form/cidade-form.component';
 import { ClienteListaComponent } from './componentes/cliente-lista/cliente-lista.component';
 import { ClienteFormComponent } from './componentes/cliente-form/cliente-form.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ClienteFormComponent } from './componentes/cliente-form/cliente-form.co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     provideClientHydration()

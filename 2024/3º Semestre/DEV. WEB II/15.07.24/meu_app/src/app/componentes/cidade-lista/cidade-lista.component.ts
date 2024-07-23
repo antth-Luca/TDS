@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Cidade } from '../model/cidade';
+import { CidadeService } from '../../services/cidade.service';
 
 @Component({
   selector: 'app-cidade-lista',
@@ -8,18 +9,19 @@ import { Cidade } from '../model/cidade';
 })
 export class CidadeListaComponent implements OnInit {
   cidadeLista: Cidade[] = [];
-  cidade1: Cidade = new Cidade();
-  cidade2: Cidade = new Cidade();
+  cidadeSelecionada: Cidade = new Cidade();
+
+  constructor(private service: CidadeService) { };
 
   ngOnInit(): void {
-    this.cidade1.id = 1;
-    this.cidade1.nome = 'Astorga';
-    this.cidade1.uf = 'PR';
-    this.cidadeLista.push(this.cidade1);
+    this.cidadeLista = this.service.get_all();
+  };
 
-    this.cidade2.id = 2;
-    this.cidade2.nome = 'Maringá';
-    this.cidade2.uf = 'PR';
-    this.cidadeLista.push(this.cidade2);
-  }
+  seleciona_cidade(cidade: Cidade) {
+    this.cidadeSelecionada = cidade;
+  };
+
+  excluir() {
+    this.service.excluir(this.cidadeSelecionada.id);
+  };
 }

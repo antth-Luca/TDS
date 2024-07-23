@@ -10,7 +10,7 @@
                 <div class="col-md-2">
                     <div class="form-group">
                         <label>ID:</label>
-                        <input type="text" class="form-control" disabled="true" name="id">
+                        <input type="text" [(ngModel)]="cidade.id" class="form-control" disabled="true" name="id">
                     </div>
                 </div>
             </div>
@@ -19,7 +19,7 @@
                 <div class="col-md-6">
                     <div class="form-group">                    
                         <label>Nome: </label>                    
-                        <input type="text" class="form-control"  name="nome">
+                        <input type="text" [(ngModel)]="cidade.nome" class="form-control"  name="nome">
                     </div>
                 </div>
             </div>
@@ -28,14 +28,14 @@
                 <div class="col-md-6">
                     <div class="form-group">                    
                         <label>Uf: </label>                    
-                        <input type="text" class="form-control"  name="uf">
+                        <input type="text" [(ngModel)]="cidade.uf" class="form-control"  name="uf">
                     </div>
                 </div>
             </div>
     
             <div class="row">
                 <div class="col-md-3">
-                    <button type="submit" class="btn btn-success">
+                    <button type="submit" class="btn btn-success" (click)="salvar()">
                         <i class="fa fa-save"></i>Salvar
                     </button>
                 </div>

@@ -24,6 +24,11 @@
                         <td>{{ cliente.id }}</td>
                         <td>{{ cliente.nome }}</td>
                         <td>{{ cliente.id_cidade_lookup }}</td>
+                        <td>
+                            <button type="button" routerLink="/cliente-form/{{ cliente.id }}" class="btn btn-primary">
+                                Alterar
+                            </button>
+                        </td>
                     </tr>
                 </tbody>
             </table>

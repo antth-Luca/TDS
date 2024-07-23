@@ -7,12 +7,19 @@ import { ClienteFormComponent } from './componentes/cliente-form/cliente-form.co
 import { ClienteListaComponent } from './componentes/cliente-lista/cliente-lista.component';
 
 const routes: Routes = [
+  // Padrão
   {path: '', redirectTo: '/home', pathMatch: 'full'},
+  // Geral
   {path: 'home', component: HomeComponent},
+  // Cidade
   {path: 'cidade-form', component: CidadeFormComponent},
+  {path: 'cidade-form/:id', component: CidadeFormComponent},
   {path: 'cidade-lista', component: CidadeListaComponent},
+  // Cliente
   {path: 'cliente-form', component: ClienteFormComponent},
+  {path: 'cliente-form/:id', component: ClienteFormComponent},
   {path: 'cliente-lista', component: ClienteListaComponent},
+
 ];
 
 @NgModule({
