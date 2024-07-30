@@ -9,7 +9,7 @@ import { ClienteService } from '../../services/cliente.service';
 })
 export class ClienteListaComponent implements OnInit {
   clienteLista: Cliente[] = [];
-  clienteSelecionada: Cliente = new Cliente();
+  clienteSelecionado: Cliente = new Cliente();
 
   constructor(private service: ClienteService) { };
 
@@ -18,10 +18,10 @@ export class ClienteListaComponent implements OnInit {
   };
 
   seleciona_cliente(cliente: Cliente) {
-    this.clienteSelecionada = cliente;
+    this.clienteSelecionado = cliente;
   };
 
   excluir() {
-    this.service.excluir(this.clienteSelecionada.id);
+    this.service.excluir(this.clienteSelecionado.id);
   };
 }

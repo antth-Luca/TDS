@@ -44,6 +44,11 @@ get_all() {
   return this.clienteLista;
 };
 
+getById(id: number) {
+  const cliente = this.clienteLista.find((value) => value.id == id);
+    return cliente;
+}
+
 excluir(id: number) {
   const cliente_index = this.clienteLista.findIndex((value) => value.id == id);
 

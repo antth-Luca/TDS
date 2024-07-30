@@ -28,10 +28,31 @@
                             <button type="button" routerLink="/cidade-form/{{ cidade.id }}" class="btn btn-primary">
                                 Alterar
                             </button>
+
+                            <button type="button" class="btn btn-danger" (click)="seleciona_cidade(cidade)" data-toggle="modal" data-target="#modalDelecao">
+                                Excluir
+                            </button>
                         </td>
                     </tr>
                 </tbody>
             </table>
+        </div>
+    </div>
+
+    <div id="modalDelecao" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-reader">
+                    <h4>Confirmação</h4>
+                </div>
+                <div class="modal-body" *ngIf="cidadeSelecionada" >
+                    Confirma a deleção da Cidade {{cidadeSelecionada.id}} - {{cidadeSelecionada.nome }}
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-sucess" (click)="excluir()" data-dismiss="modal">Confirmar </button>
+                    <button class="btn btn-default" data-dismiss="modal">Cancela</button>
+                </div>
+            </div>
         </div>
     </div>
 </main>

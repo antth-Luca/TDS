@@ -44,6 +44,11 @@ export class CidadeService {
     return this.cidadeLista;
   };
 
+  getById(id: number) {
+    const cidade = this.cidadeLista.find((value) => value.id == id);
+    return cidade;
+  }
+
   excluir(id: number) {
     const cidade_index = this.cidadeLista.findIndex((value) => value.id == id);
 

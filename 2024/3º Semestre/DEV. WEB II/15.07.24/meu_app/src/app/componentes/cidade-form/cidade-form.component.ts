@@ -14,7 +14,7 @@ export class CidadeFormComponent {
   ngOnInit(): void {
     const id = this.activateRout.snapshot.paramMap.get('id');
     if (id) {
-      // TODO: Preencher aqui!
+      this.cidade = this.service.getById(parseInt(id)) as Cidade;
     }
   };
 

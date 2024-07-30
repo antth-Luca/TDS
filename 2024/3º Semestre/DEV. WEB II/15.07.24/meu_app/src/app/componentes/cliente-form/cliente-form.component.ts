@@ -14,7 +14,7 @@ export class ClienteFormComponent {
   ngOnInit(): void {
     const id = this.activateRout.snapshot.paramMap.get('id');
     if (id) {
-      // TODO: Preencher aqui!
+      this.cliente = this.service.getById(parseInt(id)) as Cliente;
     }
   };
 
