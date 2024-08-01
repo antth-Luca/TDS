@@ -78,7 +78,7 @@ def desconto_racional_simples():
         if t.upper() == 'A' or 'ANOS' in t.upper() or 'ANO' in t.upper():
             t = t.upper().replace('ANOS', '').replace('ANO', '').replace('A', '')
             t = float(t) / 12
-        elif 'D' in t.upper() or 'DIAS' in t.upper() or 'DIA' in t.upper():
+        elif  'DIAS' in t.upper() or 'DIA' in t.upper() or 'D' in t.upper():
             t = t.upper().replace('DIAS', '').replace('DIA', '').replace('D', '')
             t = float(t) / 30
         else:  # 'M' in t.upper() or 'MESES' in t.upper() or 'MÊS' in t.upper() or 'MES' in t.upper()
@@ -91,5 +91,4 @@ def desconto_racional_simples():
 
 
 # MAIN
-desconto_comercial_simples()
 desconto_racional_simples()
