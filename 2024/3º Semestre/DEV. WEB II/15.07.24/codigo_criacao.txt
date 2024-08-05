@@ -23,4 +23,5 @@
 
 > ng g s services/cidade
 
-> 
+// Conserto de erro de biblioteca
+> npm install @angular-devkit/build-angular --save-dev --force
