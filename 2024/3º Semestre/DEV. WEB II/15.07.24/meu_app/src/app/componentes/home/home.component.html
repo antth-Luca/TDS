@@ -1,23 +1,27 @@
 <header>
-    <h1>Bem vindo ao home!</h1>
+    <div class="d-flex justify-content-center p-3">
+        <h1>Bem vindo ao home!</h1>
+    </div>
 </header>
 <main>
     <div class="dropdown">
-        <button class="btn btn-primary">Menu</button>
-
-        <div class="dropdown-child">
-            <a routerLink="/cidade-lista" class="nav-link">
+        <button class="btn btn-primary dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Menu
+        </button>
+        <ul class="dropdown-menu">
+            <li><a routerLink="/cidade-lista" class="dropdown-item">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Listar cidades</p>
-            </a>
-        </div>
+                Listar cidades
+            </a></li>
 
-        <div class="dropdown-child">
-            <a routerLink="/cliente-lista" class="nav-link">
+            <li><a routerLink="/cliente-lista" class="dropdown-item">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Listar clientes</p>
-            </a>
-        </div>
+                Listar clientes
+            </a></li>
+        </ul>
     </div>
 </main>
 <footer></footer>
