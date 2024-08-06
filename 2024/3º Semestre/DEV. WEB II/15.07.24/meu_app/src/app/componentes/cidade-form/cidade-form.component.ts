@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Cidade } from '../model/cidade';
 import { CidadeService } from '../../services/cidade.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -8,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './cidade-form.component.html',
   styleUrl: './cidade-form.component.css'
 })
-export class CidadeFormComponent {
+export class CidadeFormComponent implements OnInit {
   constructor(private service: CidadeService, private router: Router, private activateRout: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -20,7 +20,12 @@ export class CidadeFormComponent {
 
   cidade: Cidade = new Cidade();
 
-  salvar() {
+  onSubmit() {
     this.service.salvar(this.cidade);
-  };
+    this.voltar_listagem();
+  }
+
+  voltar_listagem() {
+    this.router.navigate(['/cidade-lista']);
+  }
 }

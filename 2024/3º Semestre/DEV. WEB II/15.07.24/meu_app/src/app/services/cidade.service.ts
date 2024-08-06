@@ -10,6 +10,7 @@ export class CidadeService {
   constructor() { }
 
   salvar(cidade: Cidade) {
+    this.get_all();
     if (cidade.id) {
       // Se existe ID, altera
       const cidade_alterar = this.cidadeLista.find((value) => cidade.id == value.id);
@@ -45,6 +46,7 @@ export class CidadeService {
   };
 
   getById(id: number) {
+    this.get_all();
     const cidade = this.cidadeLista.find((value) => value.id == id);
     return cidade;
   }

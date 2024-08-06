@@ -10,6 +10,7 @@ export class ClienteService {
   constructor() { }
 
 salvar(cliente: Cliente) {
+  this.get_all();
   if (cliente.id) {
     // Se existe ID, altera
     const cliente_alterar = this.clienteLista.find((value) => cliente.id == value.id);
@@ -45,8 +46,9 @@ get_all() {
 };
 
 getById(id: number) {
+  this.get_all();
   const cliente = this.clienteLista.find((value) => value.id == id);
-    return cliente;
+  return cliente;
 }
 
 excluir(id: number) {

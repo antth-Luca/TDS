@@ -25,7 +25,7 @@
                         <td>{{ cliente.nome }}</td>
                         <td>{{ cliente.id_cidade_lookup }}</td>
                         <td>
-                            <button type="button" routerLink="/cliente-form/{{ cliente.id }}" class="btn btn-primary">
+                            <button type="button" routerLink="/cliente-form/{{ cliente.id }}" class="btn btn-primary mr-1">
                                 Alterar
                             </button>
 
@@ -46,11 +46,11 @@
                     <h4>Confirmação</h4>
                 </div>
                 <div class="modal-body" *ngIf="clienteSelecionado" >
-                    Confirma a deleção do Cliente {{clienteSelecionado.id}} - {{clienteSelecionado.nome }}
+                    Confirma a deleção de "{{clienteSelecionado.id}}º cliente: {{clienteSelecionado.nome }}"?
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-sucess" (click)="excluir()" data-dismiss="modal">Confirmar </button>
-                    <button class="btn btn-default" data-dismiss="modal">Cancela</button>
+                    <button class="btn btn-success" (click)="excluir()" data-dismiss="modal">Confirmar</button>
+                    <button class="btn btn-default" data-dismiss="modal">Cancelar</button>
                 </div>
             </div>
         </div>

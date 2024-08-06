@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Cliente } from '../model/cliente';
 import { ClienteService } from '../../services/cliente.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -20,7 +20,12 @@ export class ClienteFormComponent {
 
   cliente: Cliente = new Cliente();
 
-  inserir() {
+  onSubmit() {
     this.service.salvar(this.cliente);
+    this.voltar_listagem();
+  }
+
+  voltar_listagem() {
+    this.router.navigate(['/cliente-lista']);
   };
 }

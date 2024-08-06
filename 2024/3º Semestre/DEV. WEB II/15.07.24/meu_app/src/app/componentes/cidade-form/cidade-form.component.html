@@ -3,9 +3,7 @@
 </header>
 <main>
     <div class="container ml-5">
-
-        <form>
-    
+        <form #cidadeForm="ngForm" (ngSubmit)="onSubmit()">
             <div class="row">
                 <div class="col-md-2">
                     <div class="form-group">
@@ -32,11 +30,18 @@
                     </div>
                 </div>
             </div>
-    
+
+
             <div class="row">
                 <div class="col-md-3">
-                    <button type="submit" class="btn btn-success" (click)="salvar()">
+                    <button type="submit" class="btn btn-success">
                         <i class="fa fa-save"></i>Salvar
+                    </button>
+                </div>
+
+                <div class="col-md-3">
+                    <button type="button" class="btn btn-success" (click)="voltar_listagem()">
+                        <i class="fa-solid fa-arrow-left"></i>Voltar
                     </button>
                 </div>
             </div>
