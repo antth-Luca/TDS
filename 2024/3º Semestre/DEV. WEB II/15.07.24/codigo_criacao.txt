@@ -12,7 +12,7 @@
 
 > npm install --save jquery
 
-> npm install --save bootstrap@4.3.1
+> npm install --save bootstrap@5.3.3
 
 --> app > angular.json > [linha 37: substituir:
     "styles": [
