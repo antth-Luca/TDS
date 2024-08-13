@@ -33,28 +33,34 @@
                                 Alterar
                             </button>
 
-                            <button type="button" class="btn btn-danger" (click)="seleciona_cidade(cidade)" data-toggle="modal" data-target="#modalDelecao">
+                            <button type="button" class="btn btn-danger" (click)="seleciona_cidade(cidade)" data-bs-toggle="modal" data-bs-target="#modalDelecao">
                                 Excluir
-                            </button>
+                            </button>                          
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
-
-    <div id="modalDelecao" class="modal fade" role="dialog">
+    <!-- Modal -->
+    <div class="modal" id="modalDelecao" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-reader">
-                    <h4>Confirmação</h4>
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirmação</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body" *ngIf="cidadeSelecionada" >
-                    Confirma a deleção de "{{ cidadeSelecionada.id }}º cidade: {{ cidadeSelecionada.nome }}"?
+                <div class="modal-body">
+                    <p>Confirma a deleção de "{{ cidadeSelecionada.id }}º cidade: {{ cidadeSelecionada.nome }}"?</p>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-success" (click)="excluir()" data-dismiss="modal">Confirmar</button>
-                    <button class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-default" data-bs-dismiss="modal">
+                        Cancelar
+                    </button>
+
+                    <button type="button" class="btn btn-success" (click)="excluir()" data-bs-dismiss="modal">
+                        Confirmar
+                    </button>
                 </div>
             </div>
         </div>
