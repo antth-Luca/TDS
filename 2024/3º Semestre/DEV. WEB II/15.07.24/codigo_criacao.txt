@@ -25,3 +25,7 @@
 
 // Conserto de erro de biblioteca
 > npm install @angular-devkit/build-angular --save-dev --force
+
+> ng g c login
+
+> ng g s services/login

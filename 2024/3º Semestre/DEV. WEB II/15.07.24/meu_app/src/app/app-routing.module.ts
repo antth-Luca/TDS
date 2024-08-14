@@ -6,7 +6,7 @@ import { CidadeListaComponent } from './componentes/cidade-lista/cidade-lista.co
 import { ClienteFormComponent } from './componentes/cliente-form/cliente-form.component';
 import { ClienteListaComponent } from './componentes/cliente-lista/cliente-lista.component';
 import { AuthGuard } from './auth.guard';
-import { LoginComponent } from './componentes/login/login.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   // Padrão
