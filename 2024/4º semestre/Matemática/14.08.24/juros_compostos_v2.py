@@ -1,11 +1,16 @@
-def calc_taxa_juros_compostos():
+from math import log
+
+def calc_juros_compostos():
     # -- ANOTAÇÕES --
     #  M = montante  (R$ 133,10)
-    #  c = capital (R$ 1000,00)
+    #  c = capital (R$ 100,00)
     #  i = taxa (10% ao mês)
     #  t = tempo (3 meses)
     #  -- Fórmulas --
     #  1. i = [(M / C)^(1/t)] - 1
+    # ex1. 0.10 ao mês = [(133,10 / 100)^(1/3 meses)] - 1
+    #  2. n = (logM - logC) / log(1 + i)
+    # ex2. 3 meses = (log133,10 - log100) / log(1 + 0,10 ao mês)
 
     # -- COLETA --
     print("----- Digite os dados e deixe um campo em branco (apenas aperte 'Enter') para calculá-lo -----")
@@ -26,18 +31,27 @@ def calc_taxa_juros_compostos():
 
     #  taxa
     if i:
+        i = i.upper()
+
+        if 'A.A.' in i or 'A.A' in i or 'AA.' in i or 'AA' in i:
+            i = i.upper().replace('A.A.', '').replace('A.A', '').replace('AA.', '').replace('AA', '')
+            dividir = 12
+        elif 'A.D.' in i or 'A.D' in i or 'AD.' in i or 'AD' in i:
+            i = i.upper().replace('A.D.', '').replace('A.D', '').replace('AD.', '').replace('AD', '')
+            dividir = 30
+        else: # 'A.M.' in i or 'A.M' in i or 'AM.' in i or 'AM' in i
+            dividir = 1
+
+        porcent = False
         if '%' in i:
             i = i.replace('%', '')
-        if 'A.A.' in i.upper() or 'A.A' in i.upper() or 'AA.' in i.upper() or 'AA' in i.upper():
-            i = i.upper().replace('A.A.', '').replace('A.A', '').replace('AA.', '').replace('AA', '')
-            i = (float(i) / 100) / 12
-        elif 'A.D.' in i.upper() or 'A.D' in i.upper() or 'AD.' in i.upper() or 'AD' in i.upper():
-            i = i.upper().replace('A.D.', '').replace('A.D', '').replace('AD.', '').replace('AD', '')
-            i = (float(i) / 100) / 30
-        else:  # 'A.M.' in i.upper() or 'A.M' in i.upper() or 'AM.' in i.upper() or 'AM' in i.upper()
-            i = i.upper().replace('A.M.', '').replace('A.M', '').replace('AM.', '').replace('AM', '')
-            i = float(i) / 100
+            porcent = True
 
+        i = float(i.replace(',', '.'))
+
+        if porcent:
+            i /= 100
+        i /= dividir
 
 
     #  tempo
@@ -55,8 +69,10 @@ def calc_taxa_juros_compostos():
 
     # -- OPERAÇÕES --
     if not i:
-        print(f'i = R$ {(pow((M / c), (1 / t)) - 1):.2f}')
+        print(f'i = {(pow((M / c), (1 / t)) - 1):.3f}')
+    elif not t:
+        print(f'n = {(log(M) - log(c)) / log(1 + i):.2f}')
 
 
 # MAIN
-calc_taxa_juros_compostos()
+calc_juros_compostos()
