@@ -1,0 +1,20 @@
+{% extends 'Bases/base-global.html' %}
+
+{% block 'titulo' %}
+    Listagem
+{% endblock %}
+
+{% block 'body' %}
+    <h1>Listando {% block 'tipo_listagem' %}{% endblock %}</h1>
+
+    <table>
+        <thead>
+            <tr>
+                {% block colunas %}{% endblock %}
+            </tr>
+        </thead>
+        <tbody>
+            {% block tratam_dados %}{% endblock %}
+        </tbody>
+    </table>
+{% endblock %}
