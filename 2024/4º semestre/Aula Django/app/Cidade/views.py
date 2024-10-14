@@ -1,6 +1,6 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import CreateView, ListView
-from django.views.generic.edit import UpdateView
+from django.views.generic.edit import UpdateView, DeleteView
 from django.urls import reverse_lazy
 from .models import Cidade
 
@@ -25,4 +25,11 @@ class EditCidadeView(LoginRequiredMixin, UpdateView):
     model = Cidade
     fields = '__all__'
     template_name = 'Cidade/edit-cidade.html'
+    success_url = reverse_lazy('ListCidade')
+
+
+class DeleteCidadeView(LoginRequiredMixin, DeleteView):
+    login_url = reverse_lazy('Entrada')
+    model = Cidade
+    template_name = 'Cidade/delete-cidade.html'
     success_url = reverse_lazy('ListCidade')

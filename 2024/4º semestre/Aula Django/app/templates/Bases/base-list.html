@@ -5,16 +5,23 @@
 {% endblock %}
 
 {% block 'body' %}
-    <h1>Listando {% block 'tipo_listagem' %}{% endblock %}</h1>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-8 mx-auto p-3 d-flex flex-column">
+                {% block btn_add %}<a href="{% block url_regist %}{% endblock %}" class="btn btn-primary align-self-end me-3 mt-3">Novo registro</a>{% endblock %}
+                <p class="h4 mt-5">Listando {% block 'tipo_listagem' %}{% endblock %}</p>
 
-    <table>
-        <thead>
-            <tr>
-                {% block colunas %}{% endblock %}
-            </tr>
-        </thead>
-        <tbody>
-            {% block tratam_dados %}{% endblock %}
-        </tbody>
-    </table>
+                <table class="table table-sm table-striped table-hover">
+                    <thead>
+                        <tr>
+                            {% block colunas %}{% endblock %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% block tratam_dados %}{% endblock %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 {% endblock %}

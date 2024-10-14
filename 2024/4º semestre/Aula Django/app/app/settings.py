@@ -26,11 +26,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Bootstrap
+    'crispy_forms',  # pip install django-crispy-forms
+    'crispy_bootstrap5',  # pip install crispy-bootstrap5
     # Módulos
     'Central.apps.CentralConfig',
     'Cidade.apps.CidadeConfig',
     'Login_Logout.apps.LoginLogoutConfig'
 ]
+
+
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
