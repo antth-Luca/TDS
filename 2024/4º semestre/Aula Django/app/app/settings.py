@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     # Módulos
     'Central.apps.CentralConfig',
     'Cidade.apps.CidadeConfig',
+    'Cliente.apps.ClienteConfig',
     'Login_Logout.apps.LoginLogoutConfig'
 ]
 
