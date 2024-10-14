@@ -10,7 +10,7 @@ class CreateCidadeView(LoginRequiredMixin, CreateView):
     model = Cidade
     fields = '__all__'
     template_name = 'Cidade/create-cidade.html'
-    success_url = reverse_lazy('Home')
+    success_url = reverse_lazy('ListCidade')
 
 
 class ListCidadeView(LoginRequiredMixin, ListView):
