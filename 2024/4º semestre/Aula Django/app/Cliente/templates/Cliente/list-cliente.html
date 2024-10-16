@@ -13,11 +13,16 @@
 {% block tratam_dados %}
     {% for cliente in clientes %}
         <tr>
-            <th scope="row">{{ cliente.pk }}</th>
+            <th scope="row">{{ forloop.counter }}</th>
             <td>{{ cliente.nome }}</td>
             <td>{{ cliente.cidade }}</td>
-            <td><a href="{% url 'EditCliente' cliente.pk %}" class="btn btn-warning">Editar</a></td>
-            <td><a href="{% url 'DeleteCliente' cliente.pk %}" class="btn btn-danger">Excluir</a></td>
+            <td>
+                <a href="{% url 'EditCliente' cliente.pk %}" class="btn btn-warning" title="Editar">
+                    <i class="fa-solid fa-pencil"></i></a>
+
+                <a href="{% url 'DeleteCliente' cliente.pk %}" class="btn btn-danger" title="Excluir">
+                    <i class="fa-solid fa-trash"></i></a>
+            </td>
         </tr>
     {% empty %}
         <td><li class="text-danger">Nenhum registro encontrado.</li></td>
