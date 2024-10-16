@@ -5,19 +5,19 @@ from django.urls import reverse_lazy
 from .models import Cidade
 
 # Create your views here.
+class ListCidadeView(LoginRequiredMixin, ListView):
+    login_url = reverse_lazy('Entrada')
+    model = Cidade
+    template_name = 'Cidade/list-cidade.html'
+    context_object_name = 'cidades'
+
+
 class CreateCidadeView(LoginRequiredMixin, CreateView):
     login_url = reverse_lazy('Entrada')
     model = Cidade
     fields = '__all__'
     template_name = 'Cidade/create-cidade.html'
     success_url = reverse_lazy('ListCidade')
-
-
-class ListCidadeView(LoginRequiredMixin, ListView):
-    login_url = reverse_lazy('Entrada')
-    model = Cidade
-    template_name = 'Cidade/list-cidade.html'
-    context_object_name = 'cidades'
 
 
 class EditCidadeView(LoginRequiredMixin, UpdateView):

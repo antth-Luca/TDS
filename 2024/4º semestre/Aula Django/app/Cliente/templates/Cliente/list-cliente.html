@@ -1,0 +1,25 @@
+{% extends 'Bases/base-list.html' %}
+
+{% block url_regist %}{% url 'CreateCliente' %}{% endblock %}
+{% block 'tipo_listagem' %}Cliente{% endblock %}
+
+{% block colunas %}
+    <th scope="col">Nº</th>
+    <th scope="col">Nome</th>
+    <th scope="col">Cidade</th>
+    <th scope="col">Opções</th>
+{% endblock %}
+
+{% block tratam_dados %}
+    {% for cliente in clientes %}
+        <tr>
+            <th scope="row">{{ cliente.pk }}</th>
+            <td>{{ cliente.nome }}</td>
+            <td>{{ cliente.cidade }}</td>
+            <td><a href="{% url 'EditCliente' cliente.pk %}" class="btn btn-warning">Editar</a></td>
+            <td><a href="{% url 'DeleteCliente' cliente.pk %}" class="btn btn-danger">Excluir</a></td>
+        </tr>
+    {% empty %}
+        <td><li class="text-danger">Nenhum registro encontrado.</li></td>
+    {% endfor %}
+{% endblock %}

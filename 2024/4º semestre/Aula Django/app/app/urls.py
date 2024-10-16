@@ -6,5 +6,6 @@ urlpatterns = [
     # Módulos
     path('', include('Central.urls')),
     path('', include('Cidade.urls')),
+    path('', include('Cliente.urls')),
     path('auth/', include('Login_Logout.urls')),
 ]
